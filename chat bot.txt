@@ -1,0 +1,48 @@
+# ChattyBot: just a friendly little chatbot made for fun.
+# It's not too fancy but knows how to chat a bit!
+
+def chatty_bot():
+    print("Hey, I'm ChattyBot 😄! Wanna talk? (Type 'bye' anytime to quit.)")
+    
+    while True:
+        user = input("> ").strip().lower()
+        
+        if not user:
+            print("Huh? You didn't say anything—try again!")
+            continue
+        
+        # Basic greetings
+        if user in ["hi", "hello", "hey", "howdy", "hiya", "hola"]:
+            print("Hey there! What's up?")
+            continue
+        
+        # Checking in
+        if user in ["how are you", "how are you?", "how's it going", "sup"]:
+            print("Honestly, I'm just a bunch of code... but I'm feeling good! You?")
+            continue
+        
+        # Happy feelings
+        if any(word in user for word in ["good", "great", "awesome", "fantastic", "well"]):
+            print("Glad to hear that! 😃 So, what else is going on?")
+            continue
+        
+        # Not-so-happy feelings
+        if any(word in user for word in ["bad", "tired", "sad", "bored", "not great"]):
+            print("Aw, that's rough. If you want to talk, I'm all 'ears' (well, sort of)!")
+            continue
+        
+        # Saying goodbye
+        if user in ["bye", "goodbye", "see ya", "later", "quit"]:
+            print("Alright, talk soon! Take care! 👋")
+            break
+        
+        # Asking for help
+        if "help" in user or "can you do" in user:
+            print("I can chat a little, cheer you up, and keep things friendly! Try saying hi or telling me how you feel.")
+            continue
+        
+        # Just in case
+        print("Hmm, I don't really know what to say to that. Try something simple, like 'hello' or 'how are you?'.")
+        
+# Start the chat
+chatty_bot()
